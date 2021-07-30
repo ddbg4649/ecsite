@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="row">
     <div class="col-2">
         @component('components.sidebar', ['categories' => $categories, 'major_category_names' => $major_category_names])
         @endcomponent
     </div>
-<div class="row">
     <div class="col-9">
         <div class="container">
             @if ($category !== null)
@@ -46,7 +46,7 @@
                 @endforeach
             </div>
         </div>
-        {{ $products->links() }}
+        <div class="d-flex justify-content-center">{{ $products->links() }}</div>
     </div>
 </div>
 @endsection
