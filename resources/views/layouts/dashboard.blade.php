@@ -29,7 +29,7 @@
     @endcomponent
 
     <div class="row">
-        @auth
+        @if(Auth::guard('admins')->check())
         <div class="col-3 mt-3">
             @component('components.dashboard.sidebar')
             @endcomponent

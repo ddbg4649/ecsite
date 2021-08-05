@@ -41,7 +41,7 @@ class CartController extends Controller
     {
         Cart::instance(Auth::user()->id)->add(
             [
-                'id' => $request->_token, 
+                'id' => $request->id, 
                 'name' => $request->name, 
                 'qty' => $request->qty, 
                 'price' => $request->price, 
