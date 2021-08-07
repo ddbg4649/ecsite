@@ -41,15 +41,16 @@ class CartController extends Controller
     {
         Cart::instance(Auth::user()->id)->add(
             [
-                'id' => $request->id, 
-                'name' => $request->name, 
-                'qty' => $request->qty, 
-                'price' => $request->price, 
-                'weight' => $request->weight, 
+                'id' => $request->_token,
+                'name' => $request->name,
+                'qty' => $request->qty,
+                'price' => $request->price,
+                'weight' => $request->weight,
                 'options' => [
-                    'carriage' => $request->carriage
+                    'carriage' => $request->carriage,
+                    'image' => $request->image
                 ]
-            ] 
+            ]
         );
 
         return redirect()->route('products.show', $request->get('id'));

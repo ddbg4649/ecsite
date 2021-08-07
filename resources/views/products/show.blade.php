@@ -37,8 +37,12 @@
                     <div class="col-sm-10">
                         <input type="number" id="quantity" name="qty" min="1" value="1" class="form-control w-25">
                     </div>
+                    @if ($product->carriage_flag)
+                    <p class="souryou">※こちらの商品は別途送料800円がかかります。</p>
+                    @endif
                 </div>
                 <input type="hidden" name="weight" value="0">
+                <input type="hidden" name="image" value="{{$product->image}}">
                 <div class="row">
                     <div class="col-7">
                         <button type="submit" class="btn samazon-submit-button w-100">
@@ -99,6 +103,7 @@
                 </div>
             </div>
             @endauth
+            
         </div>
     </div>
 </div>
